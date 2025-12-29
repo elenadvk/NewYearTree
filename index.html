@@ -110,18 +110,20 @@
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Physics2DPlugin3.min.js"></script>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/EasePack3.min.js"></script> -->
 
-        <!-- GSAP Core -->
+        <!-- Правильный порядок -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        
         <!-- Плагины GSAP -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MorphSVGPlugin.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/DrawSVGPlugin.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Physics2DPlugin.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+        
+        <!-- Только потом ваш скрипт -->
+        <script src="script.js" defer></script>
 
-        <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
-        <script src="script.js" defer></script> <!-- Добавлен defer -->
+        <!-- <script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
+        <script src="script.js" defer></script> <!-- Добавлен defer --> -->
         <!-- <script src="script.js"></script> -->
 
 </body>
