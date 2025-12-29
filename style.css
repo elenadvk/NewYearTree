@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "mountains_of_christmasregular";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff2")
+      format("woff2"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #151522;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  width: 90%;
+  height: 90%;
+  visibility: hidden;
+}
+
+foreignObject {
+  font-family: mountains_of_christmasregular;
+  font-size: 2rem;
+  text-anchor: middle;
+  text-align: center;
+  fill: #ffffff;
+  color: #ffffff;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+
+foreignObject {
+  font-family: mountains_of_christmasregular;
+  font-size: 1rem;
+  text-anchor: middle;
+  text-align: center;
+  fill: #ffffff;
+  color: #ffffff;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+
+
+/* Стили для снежинок */
+#snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.snowflake {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(0.5px);
+  opacity: 0.8;
+}
+
+/* Для красивого градиентного фона (если его нет) */
+body {
+  background: linear-gradient(to bottom, #0a0a2a, #151522);
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Контейнер для звёздочек */
+#stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Звёздочка */
+.star {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* Форма звёздочки через CSS */
+.star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  clip-path: polygon(50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%);
+}
+
+/* Эффект свечения */
+.star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle,
+      currentColor 0%,
+      transparent 70%);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: -1;
+}
