@@ -1,2 +1,0 @@
-# NewYearTree
-New Year Tree
